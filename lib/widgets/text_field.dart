@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({super.key, required this.lable, required this.hint});
+  const CustomTextField(
+      {super.key,
+      required this.lable,
+      required this.hint,
+      required this.password});
   final String lable;
   final String hint;
+  final bool password;
   @override
   Widget build(BuildContext context) {
     return TextField(
+      obscureText: password,
       decoration: InputDecoration(
           border: const OutlineInputBorder(
               borderSide: BorderSide(color: Colors.white)),

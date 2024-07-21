@@ -30,67 +30,71 @@ class LoginPage extends StatelessWidget {
               ];
             }),
       ),
-      body: ListView(
-        children: [
-          const MainWidget(),
-          const SizedBox(
-            height: 80,
-          ),
-          const Center(child: HeadText(lable: 'LOGIN')),
-          const SizedBox(
-            height: 13,
-          ),
-          const Padding(
-            padding: EdgeInsets.all(20),
-            child: CustomTextField(
-              lable: 'Email',
-              hint: 'Enter your email or user name',
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const MainWidget(),
+            const SizedBox(
+              height: 80,
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.all(20),
-            child: CustomTextField(
-              lable: 'Password',
-              hint: 'Enter your password',
+            const Center(child: HeadText(lable: 'LOGIN')),
+            const SizedBox(
+              height: 13,
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
-            child: Row(
-              children: [
-                TextButton(
-                  onPressed: () {},
-                  child: const Text(
-                    'Forgot Password ?',
-                    style: TextStyle(
-                      fontSize: 16,
-                      color: Color(0xff75D1C3),
+            const Padding(
+              padding: EdgeInsets.all(20),
+              child: CustomTextField(
+                password: false,
+                lable: 'Email',
+                hint: 'Enter your email or user name',
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(20),
+              child: CustomTextField(
+                password: true,
+                lable: 'Password',
+                hint: 'Enter your password',
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
+              child: Row(
+                children: [
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text(
+                      'Forgot Password ?',
+                      style: TextStyle(
+                        fontSize: 16,
+                        color: Color(0xff75D1C3),
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(
-                  width: 49,
-                ),
-                const CustomButton(
-                  head: 'Login',
-                ),
-              ],
+                  const SizedBox(
+                    width: 49,
+                  ),
+                  const CustomButton(
+                    head: 'Login',
+                  ),
+                ],
+              ),
             ),
-          ),
-          const SizedBox(
-            height: 65,
-          ),
-          MainButton(
-            title: 'Sign Up',
-            onTap: () {
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: ((context) => const SignUpPage()),
-                ),
-              );
-            },
-          )
-        ],
+            const SizedBox(
+              height: 65,
+            ),
+            MainButton(
+              title: 'Sign Up',
+              onTap: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: ((context) => const SignUpPage()),
+                  ),
+                );
+              },
+            )
+          ],
+        ),
       ),
     );
   }

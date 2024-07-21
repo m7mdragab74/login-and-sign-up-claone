@@ -29,66 +29,71 @@ class SignUpPage extends StatelessWidget {
               ];
             }),
       ),
-      body: ListView(
-        children: [
-          const MainWidget(),
-          const SizedBox(
-            height: 45,
-          ),
-          const Center(child: HeadText(lable: 'SIGN UP')),
-          const SizedBox(
-            height: 13,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(
-              top: 10,
-              bottom: 10,
-              right: 20,
-              left: 20,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            const MainWidget(),
+            const SizedBox(
+              height: 45,
             ),
-            child: const CustomTextField(
-              lable: 'Email',
-              hint: 'Enter your email',
+            const Center(child: HeadText(lable: 'SIGN UP')),
+            const SizedBox(
+              height: 13,
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(
-              top: 10,
-              bottom: 10,
-              right: 20,
-              left: 20,
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 10,
+                bottom: 10,
+                right: 20,
+                left: 20,
+              ),
+              child: const CustomTextField(
+                password: false,
+                lable: 'Email',
+                hint: 'Enter your email',
+              ),
             ),
-            child: CustomTextField(
-              lable: 'Password',
-              hint: 'Choose strong password',
+            const Padding(
+              padding: EdgeInsets.only(
+                top: 10,
+                bottom: 10,
+                right: 20,
+                left: 20,
+              ),
+              child: CustomTextField(
+                password: true,
+                lable: 'Password',
+                hint: 'Choose strong password',
+              ),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(
-              top: 10,
-              bottom: 10,
-              right: 20,
-              left: 20,
+            const Padding(
+              padding: EdgeInsets.only(
+                top: 10,
+                bottom: 10,
+                right: 20,
+                left: 20,
+              ),
+              child: CustomTextField(
+                password: true,
+                lable: 'Confirm Password',
+                hint: 'Re enter your password',
+              ),
             ),
-            child: CustomTextField(
-              lable: 'Confirm Password',
-              hint: 'Re enter your password',
+            const Padding(
+              padding: EdgeInsets.only(top: 30, left: 190, right: 21),
+              child: CustomButton(head: 'Sign Up'),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(top: 30, left: 190, right: 21),
-            child: CustomButton(head: 'Sign Up'),
-          ),
-          const SizedBox(
-            height: 42,
-          ),
-          MainButton(
-            title: 'Login',
-            onTap: () {
-              Navigator.of(context).pop();
-            },
-          )
-        ],
+            const SizedBox(
+              height: 42,
+            ),
+            MainButton(
+              title: 'Login',
+              onTap: () {
+                Navigator.of(context).pop();
+              },
+            )
+          ],
+        ),
       ),
     );
   }
